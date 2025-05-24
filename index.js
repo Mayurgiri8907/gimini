@@ -3,7 +3,8 @@ const app = express();
 const main = require('./util/textgenreate');
 const swaggerJsdoc = require('swagger-jsdoc');
 const swaggerUi = require('swagger-ui-express');
-
+const dotenv = require('dotenv').config();
+const port = process.env.PORT || 3000;
 const swaggerOptions = {
   definition: {
     openapi: '3.0.0',
@@ -60,4 +61,4 @@ app.post("/",async (req,res) =>{
 })
 
 
-app.listen(3000);
+app.listen(port);
